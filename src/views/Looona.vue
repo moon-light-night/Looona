@@ -1,5 +1,12 @@
 <template>
-  <div>test</div>
+  <div>
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <button>to main</button>
+  </div>
 </template>
 
 <script>
