@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <div id="main">
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, molestiae.
+      </p>
+    </div>
     <ul>
       <li><b-button @click="speech()" variant="dark">Ask Looona</b-button></li>
       <li>
@@ -19,6 +24,8 @@ export default {
       result: null,
       synth: null,
       utterance: null,
+      arr: null,
+      lastIndex: null,
     }
   },
   created() {
@@ -27,23 +34,20 @@ export default {
     this.recognizer.lang = 'ru-Ru'
     this.recognizer.onresult = function(event) {
       this.result = event.results[event.resultIndex]
-      if (this.result[0].transcript == 'Луна Перейди на finviz.com') {
-        window.location = 'https://finviz.com/'
-      } else {
-        console.log(this.result[0].transcript)
-      }
+      this.arr = this.result[0].transcript.split(' ')
+      this.lastIndex = this.arr[this.arr.length - 1]
+      window.location = `https://${this.lastIndex}/`
+      this.arr = null
+      this.lastIndex = null
+      this.result = null
     }
   },
   methods: {
     speech() {
-      // Начинаем слушать микрофон и распознавать голос
       this.recognizer.start()
     },
     talk() {
-      function speech() {
-        // Начинаем слушать микрофон и распознавать голос
-        recognizer.start()
-      }
+      recognizer.start()
       this.recognizer.onresult = function(event) {
         this.result = event.results[event.resultIndex]
         if (this.result.isFinal && this.result[0].transcript == 'Луна Привет') {
@@ -87,7 +91,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
+#main {
   background: url(../assets/zVoFEF.jpg) 50% 0 no-repeat;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -97,12 +101,15 @@ div {
   position: fixed;
   top: 0;
   left: 0;
+  div {
+  }
   ul {
     padding-left: 0px;
     position: fixed;
     bottom: 100px;
     li {
       list-style-type: none;
+      margin-bottom: 20px;
     }
   }
 }
