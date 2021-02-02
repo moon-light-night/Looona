@@ -1,10 +1,6 @@
 <template>
   <div id="main">
-    <div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, molestiae.
-      </p>
-    </div>
+    <Accordion></Accordion>
     <ul>
       <li><b-button @click="speech()" variant="dark">Ask Looona</b-button></li>
       <li>
@@ -16,7 +12,7 @@
 </template>
 
 <script>
-import '../speech.js'
+import Accordion from '@/components/Accordion.vue'
 export default {
   data() {
     return {
@@ -28,19 +24,22 @@ export default {
       lastIndex: null,
     }
   },
+  components: {
+    Accordion,
+  },
   created() {
-    this.recognizer = new webkitSpeechRecognition()
-    this.recognizer.interimResults = true
-    this.recognizer.lang = 'ru-Ru'
-    this.recognizer.onresult = function(event) {
-      this.result = event.results[event.resultIndex]
-      this.arr = this.result[0].transcript.split(' ')
-      this.lastIndex = this.arr[this.arr.length - 1]
-      window.location = `https://${this.lastIndex}/`
-      this.arr = null
-      this.lastIndex = null
-      this.result = null
-    }
+    // this.recognizer = new webkitSpeechRecognition()
+    // this.recognizer.interimResults = true
+    // this.recognizer.lang = 'ru-Ru'
+    // this.recognizer.onresult = function(event) {
+    //   this.result = event.results[event.resultIndex]
+    //   this.arr = this.result[0].transcript.split(' ')
+    //   this.lastIndex = this.arr[this.arr.length - 1]
+    //   window.location = `https://${this.lastIndex}/`
+    //   this.arr = null
+    //   this.lastIndex = null
+    //   this.result = null
+    // }
   },
   methods: {
     speech() {
