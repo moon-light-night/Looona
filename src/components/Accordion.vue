@@ -11,16 +11,14 @@
           <b-card-text
             >In order to go to the site, you need to click once on the
             <code><b>Ask Looona</b></code> and confirm the permission to use the
-            microphone in the browser and say for example
-            <code><b>Looona go to finviz.com</b></code> or
-            <code
-              ><b>"Луна, перейди на <i>финвиз дот ком</i>"</b></code
-            ><br />
+            microphone in the browser and say address.<br />
             <b
-              >It's necessary to pronounce the words loudly, clearly and with an
-              arrangement</b
-            ></b-card-text
-          >
+              >Full information you can find in the
+              <code @click="$router.push({ name: 'Documentation' })"
+                ><a>documentation</a></code
+              >.</b
+            >
+          </b-card-text>
         </b-card-body>
       </b-collapse>
     </b-card>
@@ -44,13 +42,14 @@
       >
         <b-card-body variant="danger">
           <b-card-text
-            >The current feature currently supports certain phrases for
-            pronunciation. If you manage to get into the desired phrase -
-            congratulations... the full list of phrases is periodically updated
-            and you can find out from the developer of this service by
-            contacting him through the
-            <code @click="$router.push({ name: 'Contacts' })"
-              ><a>contacts</a></code
+            >You should to click once on
+            <code><b id="utter">Utter by Looona</b></code> then once on
+            <code><b>Ask Looona</b></code> and say the phrase.<br />
+            <b
+              >Full information you can find in the
+              <code @click="$router.push({ name: 'Documentation' })"
+                ><a>documentation</a></code
+              >.</b
             ></b-card-text
           >
         </b-card-body>
@@ -66,8 +65,8 @@
       <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
         <b-card-body>
           <b-card-text
-            >This function stops the moon from working. To resume it's work, you
-            must reload the page</b-card-text
+            >This function stops the Looona from working. To resume it's work,
+            you must reload the page</b-card-text
           >
         </b-card-body>
       </b-collapse>
@@ -85,6 +84,9 @@ export default {
 
 <style lang="scss" scoped>
 #content {
+  #utter {
+    color: rgb(67, 196, 67);
+  }
   width: 500px;
   position: fixed;
   right: 10px;

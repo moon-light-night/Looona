@@ -2,12 +2,20 @@
   <div id="main">
     <Accordion></Accordion>
     <ul>
-      <li><b-button @click="speech()" variant="dark">Ask Looona</b-button></li>
       <li>
-        <b-button @click="talk()" variant="dark">Utter by Looona</b-button>
+        <b-button @click="speech()" variant="primary">Ask Looona</b-button>
+      </li>
+      <li>
+        <b-button @click="talk()" variant="success">Utter by Looona</b-button>
       </li>
       <li><b-button @click="stop()" variant="danger">Stop Looona</b-button></li>
     </ul>
+    <b-button
+      @click="$router.push({ name: 'MainPage' })"
+      variant="dark"
+      id="btn"
+      >To main</b-button
+    >
   </div>
 </template>
 
@@ -100,12 +108,16 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  div {
+  #btn {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
   }
   ul {
-    padding-left: 0px;
+    padding-left: 5px;
     position: fixed;
     bottom: 100px;
+    display: block;
     li {
       list-style-type: none;
       margin-bottom: 20px;
