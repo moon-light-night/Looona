@@ -50,49 +50,49 @@ export default {
     // }
   },
   methods: {
-    speech() {
-      this.recognizer.start()
-    },
-    talk() {
-      recognizer.start()
-      this.recognizer.onresult = function(event) {
-        this.result = event.results[event.resultIndex]
-        if (this.result.isFinal && this.result[0].transcript == 'Луна Привет') {
-          this.synth = window.speechSynthesis
-          this.utterance = new SpeechSynthesisUtterance('Привет, иксашэйтвэлв')
-          this.synth.speak(this.utterance)
-        } else {
-          console.log('Промежуточный результат: ', this.result[0].transcript)
-        }
-        if (
-          this.result.isFinal &&
-          this.result[0].transcript == 'Как дела луна'
-        ) {
-          this.synth = window.speechSynthesis
-          this.utterance = new SpeechSynthesisUtterance(
-            'Всё супер, спасибо, как твои дела, юшка'
-          )
-          this.synth.speak(this.utterance)
-        } else {
-          console.log('Промежуточный результат: ', this.result[0].transcript)
-        }
-        if (
-          this.result.isFinal &&
-          this.result[0].transcript == 'Чем занимаешься луна'
-        ) {
-          this.synth = window.speechSynthesis
-          this.utterance = new SpeechSynthesisUtterance(
-            'Преисполняюсь в собственном сознании и иду любоваться прекрасным блять осенним закатом'
-          )
-          this.synth.speak(this.utterance)
-        } else {
-          console.log('Промежуточный результат: ', this.result[0].transcript)
-        }
-      }
-    },
-    stop() {
-      this.synth.pause()
-    },
+    // speech() {
+    //   this.recognizer.start()
+    // },
+    // talk() {
+    //   recognizer.start()
+    //   this.recognizer.onresult = function(event) {
+    //     this.result = event.results[event.resultIndex]
+    //     if (this.result.isFinal && this.result[0].transcript == 'Луна Привет') {
+    //       this.synth = window.speechSynthesis
+    //       this.utterance = new SpeechSynthesisUtterance('Привет, иксашэйтвэлв')
+    //       this.synth.speak(this.utterance)
+    //     } else {
+    //       console.log('Промежуточный результат: ', this.result[0].transcript)
+    //     }
+    //     if (
+    //       this.result.isFinal &&
+    //       this.result[0].transcript == 'Как дела луна'
+    //     ) {
+    //       this.synth = window.speechSynthesis
+    //       this.utterance = new SpeechSynthesisUtterance(
+    //         'Всё супер, спасибо, как твои дела, юшка'
+    //       )
+    //       this.synth.speak(this.utterance)
+    //     } else {
+    //       console.log('Промежуточный результат: ', this.result[0].transcript)
+    //     }
+    //     if (
+    //       this.result.isFinal &&
+    //       this.result[0].transcript == 'Чем занимаешься луна'
+    //     ) {
+    //       this.synth = window.speechSynthesis
+    //       this.utterance = new SpeechSynthesisUtterance(
+    //         'Преисполняюсь в собственном сознании и иду любоваться прекрасным блять осенним закатом'
+    //       )
+    //       this.synth.speak(this.utterance)
+    //     } else {
+    //       console.log('Промежуточный результат: ', this.result[0].transcript)
+    //     }
+    //   }
+    // },
+    // stop() {
+    //   this.synth.pause()
+    // },
   },
 }
 </script>

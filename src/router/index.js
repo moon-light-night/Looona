@@ -1,43 +1,56 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import MainPage from '../views/MainPage.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/main',
     name: 'MainPage',
-    component: MainPage,
+    meta: { layout: main },
+    component: () => {
+      import('../views/MainPage.vue')
+    },
+  },
+  {
+    path: '/',
+    name: 'Login',
+    meta: { layout: empty },
+    component: () => {
+      import('../views/Login.vue')
+    },
+  },
+  {
+    path: '/registration',
+    name: 'Registration',
+    meta: { layout: empty },
+    component: () => {
+      import('../views/Registration.vue')
+    },
   },
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    meta: { layout: main },
+    component: () => import('../views/About.vue'),
   },
   {
     path: '/documentation',
     name: 'Documentation',
-    component: () =>
-      import(
-        /* webpackChunkName: "documentation" */ '../views/Documentation.vue'
-      ),
+    meta: { layout: main },
+    component: () => import('../views/Documentation.vue'),
   },
   {
     path: '/contacts',
     name: 'Contacts',
-    component: () =>
-      import(/* webpackChunkName: "contacts" */ '../views/Contacts.vue'),
+    meta: { layout: main },
+    component: () => import('../views/Contacts.vue'),
   },
   {
     path: '/looona',
     name: 'Looona',
-    component: () =>
-      import(/* webpackChunkName: "looona" */ '../views/Looona.vue'),
+    meta: { layout: main },
+    component: () => import('../views/Looona.vue'),
   },
 ]
 
