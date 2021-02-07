@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul>
+    <!-- <ul>
       <li>
         <a @click="$router.push({ name: 'Documentation' })">Documentation</a>
       </li>
@@ -13,52 +13,54 @@
       veniam hic, qui nemo nihil velit quos! Iusto odit minus voluptatibus
       voluptates soluta!
     </p>
-    <a id="btn" @click="$router.push({ name: 'Looona' })">Get started</a>
+    <a id="btn" @click="$router.push({ name: 'Looona' })">Get started</a> -->
+    <h1>Hello from mainpage</h1>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {}
 </script>
 
 <style scoped lang="scss">
-div {
+h1 {
   color: white;
-  ul {
-    display: flex;
-    justify-content: start;
-    padding-left: 0px;
-    li {
-      list-style-type: none;
-      padding-right: 30px;
-    }
-  }
-  p {
-    width: 600px;
-    padding-top: 100px;
-    font-size: 20px;
-    margin: 0 auto;
-    font-family: 'Josefin Sans', sans-serif;
-  }
-  a {
-    margin: 0 auto;
-    font-size: 28px;
-    font-family: 'Oxygen', sans-serif;
-    cursor: pointer;
-    &:hover {
-      color: rgb(192, 190, 190);
-    }
-  }
-  #btn {
-    margin: 100px auto;
-    display: block;
-    width: max-content;
-    &:hover {
-      color: rgb(92, 129, 250);
-      text-shadow: 1px 1px 2px black, 0 0 1em blue;
-    }
-  }
 }
+// div {
+//   color: white;
+//   ul {
+//     display: flex;
+//     justify-content: start;
+//     padding-left: 0px;
+//     li {
+//       list-style-type: none;
+//       padding-right: 30px;
+//     }
+//   }
+//   p {
+//     width: 600px;
+//     padding-top: 100px;
+//     font-size: 20px;
+//     margin: 0 auto;
+//     font-family: 'Josefin Sans', sans-serif;
+//   }
+//   a {
+//     margin: 0 auto;
+//     font-size: 28px;
+//     font-family: 'Oxygen', sans-serif;
+//     cursor: pointer;
+//     &:hover {
+//       color: rgb(192, 190, 190);
+//     }
+//   }
+//   #btn {
+//     margin: 100px auto;
+//     display: block;
+//     width: max-content;
+//     &:hover {
+//       color: rgb(92, 129, 250);
+//       text-shadow: 1px 1px 2px black, 0 0 1em blue;
+//     }
+//   }
+// }
 </style>
