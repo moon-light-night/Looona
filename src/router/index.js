@@ -7,7 +7,7 @@ const routes = [
   {
     path: '/main',
     name: 'MainPage',
-    meta: { layout: main },
+    meta: { layout: 'main' },
     component: () => {
       import('../views/MainPage.vue')
     },
@@ -15,7 +15,7 @@ const routes = [
   {
     path: '/',
     name: 'Login',
-    meta: { layout: empty },
+    meta: { layout: 'empty' },
     component: () => {
       import('../views/Login.vue')
     },
@@ -23,7 +23,7 @@ const routes = [
   {
     path: '/registration',
     name: 'Registration',
-    meta: { layout: empty },
+    meta: { layout: 'empty' },
     component: () => {
       import('../views/Registration.vue')
     },
@@ -31,25 +31,25 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    meta: { layout: main },
+    meta: { layout: 'main' },
     component: () => import('../views/About.vue'),
   },
   {
     path: '/documentation',
     name: 'Documentation',
-    meta: { layout: main },
+    meta: { layout: 'main' },
     component: () => import('../views/Documentation.vue'),
   },
   {
     path: '/contacts',
     name: 'Contacts',
-    meta: { layout: main },
+    meta: { layout: 'main' },
     component: () => import('../views/Contacts.vue'),
   },
   {
     path: '/looona',
     name: 'Looona',
-    meta: { layout: main },
+    meta: { layout: 'main' },
     component: () => import('../views/Looona.vue'),
   },
 ]
