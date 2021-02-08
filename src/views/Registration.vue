@@ -5,7 +5,7 @@
         <div class="row">
           <div class="input-field col s6">
             <input id="first_name" type="text" class="validate" />
-            <label for="first_name">First Name</label>
+            <label for="first_name">Name</label>
           </div>
         </div>
         <div class="row">
@@ -20,6 +20,20 @@
             <label for="password">Password</label>
           </div>
         </div>
+        <div class="row">
+          <div id="sending" class="input-field col s12">
+            <button
+              class="btn waves-effect waves-light blue"
+              type="submit"
+              name="action"
+            >
+              Submit
+              <i class="material-icons right">send</i>
+            </button>
+            <p>Already have an account?</p>
+            <a @click="$router.push('/')">Login</a>
+          </div>
+        </div>
       </form>
     </div>
   </div>
@@ -29,4 +43,33 @@
 export default {}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#modal-div {
+  .row {
+    margin-bottom: 0;
+  }
+  position: relative;
+  width: 500px;
+  background-color: white;
+  border-radius: 5px;
+  height: max-content;
+  margin: 9% auto;
+  p {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    cursor: default;
+  }
+  a {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    &:hover {
+      color: rgb(38, 21, 187);
+      cursor: pointer;
+    }
+  }
+  #sending {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+</style>
