@@ -34,22 +34,6 @@
         must reload the page
       </p>
     </div>
-    <div id="link">
-      <ul>
-        <li>
-          <b-button variant="success" @click="$router.push({ name: 'Looona' })"
-            >To Looona</b-button
-          >
-        </li>
-        <li>
-          <b-button
-            variant="success"
-            @click="$router.push({ name: 'MainPage' })"
-            >To Main</b-button
-          >
-        </li>
-      </ul>
-    </div>
   </div>
 </template>
 
@@ -59,6 +43,7 @@ export default {}
 
 <style lang="scss" scoped>
 div {
+  text-shadow: 2px 2px 2px black, 0 0 1em black;
   h2 {
     color: rgb(192, 19, 48);
   }
