@@ -11,9 +11,9 @@ import 'firebase/database'
 
 Vue.config.productionTip = false
 
+Vue.use(Vuelidate)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-Vue.use(Vuelidate)
 
 firebase.initializeApp({
   apiKey: 'AIzaSyDi3hOCqtx-vWuWYfrXwdaNDTwayjKiKFU',

@@ -5,7 +5,7 @@
         <div class="input-field col s12">
           <input
             id="email"
-            type="email"
+            type="text"
             v-model.trim="email"
             :class="{
               invalid:
@@ -14,14 +14,10 @@
             }"
           />
           <label for="email">Email</label>
-          <small
-            class="helper-text invalid"
-            v-if="$v.email.$dirty && !$v.email.required"
+          <small class="invalid" v-if="$v.email.$dirty && !$v.email.required"
             >Email can't be empty</small
           >
-          <small
-            class="helper-text invalid"
-            v-if="$v.email.$dirty && !$v.email.email"
+          <small class="invalid" v-else-if="$v.email.$dirty && !$v.email.email"
             >Enter the correct email</small
           >
         </div>
@@ -33,16 +29,40 @@
             :class="{
               invalid:
                 ($v.password.$dirty && !$v.password.required) ||
-                ($v.password.$dirty && $v.password.minLength),
+                ($v.password.$dirty && !$v.password.minLength) ||
+                ($v.password.$dirty && !$v.password.maxLength),
             }"
           />
           <label for="password">Password</label>
+          <small
+            class="invalid"
+            v-if="$v.password.$dirty && !$v.password.required"
+            >Enter the password</small
+          >
+          <small
+            class="invalid"
+            v-else-if="$v.password.$dirty && !$v.password.minLength"
+            >Min. - {{ $v.password.$params.minLength.min }}; now -
+            {{ password.length }} characters</small
+          >
+          <small
+            class="invalid"
+            v-else-if="$v.password.$dirty && !$v.password.maxLength"
+            >Max. - {{ $v.password.$params.minLength.min }}; now -
+            {{ password.length }} characters</small
+          >
         </div>
-        <div id="sending" class="input-field col s12">
+        <div class=" input-field col">
           <button class="btn waves-effect waves-light blue" type="submit">
             Login
             <i class="material-icons right">input</i>
           </button>
+        </div>
+        <div id="sending" class="input-field col s12">
+          <!-- <button class="btn waves-effect waves-light blue" type="submit">
+            Login
+            <i class="material-icons right">input</i>
+          </button> -->
           <p>Don't have an account yet?</p>
           <a @click="$router.push('/registration')">Registration</a>
         </div>
@@ -64,9 +84,9 @@ export default {
   },
   methods: {
     async submitHandler() {
-      if (this.$v.invalid) {
+      if (this.$v.$invalid) {
         //if condition system $v is invalid
-        this.$v.touch() //call method touch which activated validate
+        this.$v.$touch() //call method touch which activated validate
         return // for what logic of this method isnt called
       }
       const formData = {
@@ -84,6 +104,9 @@ export default {
 
 <style lang="scss" scoped>
 #modal-div {
+  .invalid {
+    color: #f44336;
+  }
   .input-field {
     margin-bottom: 0;
   }
