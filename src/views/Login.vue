@@ -1,52 +1,53 @@
 <template>
   <div id="modal-div">
-    <div class="row">
-      <form class="col s12 card auth-card" @submit.prevent="submitHandler">
-        <div class="card-content">
-          <div class="row">
-            <div class="input-field col s12">
-              <input
-                id="email"
-                type="email"
-                v-model.trim="email"
-                :class="{
-                  invalid:
-                    ($v.email.$dirty && !$v.email.required) ||
-                    ($v.email.$dirty && !$v.email.email),
-                }"
-              />
-              <label for="email">Email</label>
-              <small
-                class="helper-text invalid"
-                v-if="$v.email.$dirty && !$v.email.required"
-                >Email can't be empty</small
-              >
-              <small
-                class="helper-text invalid"
-                v-if="$v.email.$dirty && !$v.email.email"
-                >Enter the correct email</small
-              >
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="password" type="password" v-model.trim="password" />
-              <label for="password">Password</label>
-            </div>
-          </div>
-          <div class="row">
-            <div id="sending" class="input-field col s12">
-              <button class="btn waves-effect waves-light blue" type="submit">
-                Login
-                <i class="material-icons right">input</i>
-              </button>
-              <p>Don't have an account yet?</p>
-              <a @click="$router.push('/registration')">Registration</a>
-            </div>
-          </div>
+    <form class="col s12 card auth-card" @submit.prevent="submitHandler">
+      <div class="card-content">
+        <div class="input-field col s12">
+          <input
+            id="email"
+            type="email"
+            v-model.trim="email"
+            :class="{
+              invalid:
+                ($v.email.$dirty && !$v.email.required) ||
+                ($v.email.$dirty && !$v.email.email),
+            }"
+          />
+          <label for="email">Email</label>
+          <small
+            class="helper-text invalid"
+            v-if="$v.email.$dirty && !$v.email.required"
+            >Email can't be empty</small
+          >
+          <small
+            class="helper-text invalid"
+            v-if="$v.email.$dirty && !$v.email.email"
+            >Enter the correct email</small
+          >
         </div>
-      </form>
-    </div>
+        <div class="input-field col s12">
+          <input
+            id="password"
+            type="password"
+            v-model.trim="password"
+            :class="{
+              invalid:
+                ($v.password.$dirty && !$v.password.required) ||
+                ($v.password.$dirty && $v.password.minLength),
+            }"
+          />
+          <label for="password">Password</label>
+        </div>
+        <div id="sending" class="input-field col s12">
+          <button class="btn waves-effect waves-light blue" type="submit">
+            Login
+            <i class="material-icons right">input</i>
+          </button>
+          <p>Don't have an account yet?</p>
+          <a @click="$router.push('/registration')">Registration</a>
+        </div>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -83,7 +84,7 @@ export default {
 
 <style lang="scss" scoped>
 #modal-div {
-  .row {
+  .input-field {
     margin-bottom: 0;
   }
   position: relative;
