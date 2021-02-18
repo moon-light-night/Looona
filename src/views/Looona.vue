@@ -1,14 +1,23 @@
 <template>
   <div id="main">
+    <img src="../assets/zVoFEF.jpg" />
     <Accordion></Accordion>
     <ul>
       <li>
-        <b-button @click="speech()" variant="primary">Ask Looona</b-button>
+        <b-button @click="speech()" variant="primary" class="btn"
+          >Ask Looona</b-button
+        >
       </li>
       <li>
-        <b-button @click="talk()" variant="success">Utter by Looona</b-button>
+        <b-button @click="talk()" variant="success" class="btn"
+          >Utter by Looona</b-button
+        >
       </li>
-      <li><b-button @click="stop()" variant="danger">Stop Looona</b-button></li>
+      <li>
+        <b-button @click="stop()" variant="danger" class="btn"
+          >Stop Looona</b-button
+        >
+      </li>
     </ul>
     <b-button
       @click="$router.push({ name: 'MainPage' })"
@@ -99,12 +108,20 @@ export default {
 
 <style lang="scss" scoped>
 #main {
-  background: url(../assets/zVoFEF.jpg) 50% 0 no-repeat;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  -moz-background-size: cover;
-  width: 100%;
-  height: 100%;
+  #content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -100;
+    width: 100vw;
+  }
   position: fixed;
   top: 0;
   left: 0;
@@ -121,6 +138,21 @@ export default {
     li {
       list-style-type: none;
       margin-bottom: 20px;
+    }
+  }
+}
+@media (max-width: 900px) {
+  #main {
+    img {
+      width: 900px;
+    }
+  }
+}
+@media (max-width: 530px) {
+  #main {
+    #content {
+      width: 300px;
+      margin: 0 auto;
     }
   }
 }

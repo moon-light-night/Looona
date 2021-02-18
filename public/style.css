@@ -1,6 +1,6 @@
 body {
-  background: url(./56r0egyn.bmp) 50% 0 no-repeat;
+  background: url(./56r0egyn.bmp) 50% no-repeat;
   -webkit-background-size: cover;
-  -o-background-size: cover;
+  background-size: cover;
   -moz-background-size: cover;
 }

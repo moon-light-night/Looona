@@ -59,10 +59,6 @@
           </button>
         </div>
         <div id="sending" class="input-field col s12">
-          <!-- <button class="btn waves-effect waves-light blue" type="submit">
-            Login
-            <i class="material-icons right">input</i>
-          </button> -->
           <p>Don't have an account yet?</p>
           <a @click="$router.push('/registration')">Registration</a>
         </div>
