@@ -1,30 +1,22 @@
 <template>
-  <div id="main">
-    <img src="../assets/zVoFEF.jpg" />
+  <div class="looona">
     <Accordion></Accordion>
-    <ul>
-      <li>
-        <b-button @click="speech()" variant="primary" class="btn"
-          >Ask Looona</b-button
-        >
+    <ul class="looona__list">
+      <li class="looona__list-item">
+        <b-button @click="speech()" variant="primary">Ask Looona</b-button>
       </li>
-      <li>
-        <b-button @click="talk()" variant="success" class="btn"
-          >Utter by Looona</b-button
-        >
+      <li class="looona__list-item">
+        <b-button @click="talk()" variant="success">Utter by Looona</b-button>
       </li>
-      <li>
-        <b-button @click="stop()" variant="danger" class="btn"
-          >Stop Looona</b-button
+      <li class="looona__list-item">
+        <b-button @click="stop()" variant="danger">Stop Looona</b-button>
+      </li>
+      <li class="looona__list-item">
+        <b-button @click="$router.push({ name: 'MainPage' })" variant="dark"
+          >To main</b-button
         >
       </li>
     </ul>
-    <b-button
-      @click="$router.push({ name: 'MainPage' })"
-      variant="dark"
-      id="btn"
-      >To main</b-button
-    >
   </div>
 </template>
 
@@ -107,50 +99,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#main {
+.looona {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('~@/assets/bg.jpg');
+  &__list {
+    padding-left: 5px;
+    position: fixed;
+    bottom: 0;
+    display: block;
+  }
+  &__list-item {
+    list-style-type: none;
+    margin-bottom: 20px;
+  }
   #content {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-  }
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -100;
-    width: 100vw;
-  }
-  position: fixed;
-  top: 0;
-  left: 0;
-  #btn {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-  }
-  ul {
-    padding-left: 5px;
-    position: fixed;
-    bottom: 100px;
-    display: block;
-    li {
-      list-style-type: none;
-      margin-bottom: 20px;
-    }
-  }
-}
-@media (max-width: 900px) {
-  #main {
-    img {
-      width: 900px;
-    }
-  }
-}
-@media (max-width: 530px) {
-  #main {
-    #content {
+    @media (max-width: 530px) {
       width: 300px;
       margin: 0 auto;
     }

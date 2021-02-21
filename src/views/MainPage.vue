@@ -44,6 +44,7 @@ export default {}
     margin: 100px 0;
     text-decoration: none;
     color: white;
+    padding-bottom: 15%;
     &:hover {
       color: rgb(92, 129, 250);
       text-shadow: 1px 1px 2px black, 0 0 1em blue;
