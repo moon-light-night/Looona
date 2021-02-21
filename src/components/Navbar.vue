@@ -20,7 +20,7 @@
         <div class="nav__row-item" @click="$router.push({ name: 'Contacts' })">
           Contacts
         </div>
-        <div class="nav__row-item" @click="$router.push({ name: 'Login' })">
+        <div class="nav__row-item" @click.prevent="logout">
           Logout
         </div>
       </div>
@@ -29,7 +29,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    async logout() {
+      await this.$store.dispatch('logout')
+      this.$router.push('/')
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
