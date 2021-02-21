@@ -78,6 +78,9 @@ export default {
     display: flex;
     flex-direction: column;
     background: linear-gradient(135deg, blue, rgb(83, 240, 167) 100%);
+    @media (max-width: 650px) {
+      width: 100px;
+    }
   }
   &__sidebar-item {
     font-size: 20px;
@@ -90,6 +93,9 @@ export default {
       cursor: pointer;
       background-color: rgb(5, 5, 168);
     }
+    @media (max-width: 650px) {
+      font-size: 14px;
+    }
   }
   &__content {
     width: 100%;
@@ -100,9 +106,15 @@ export default {
   }
   &__content-item-text {
     font-size: 20px;
+    @media (max-width: 650px) {
+      font-size: 14px;
+    }
   }
   &__content-item-title {
     color: blue;
+    @media (max-width: 650px) {
+      font-size: 20px;
+    }
   }
 }
 .links {
