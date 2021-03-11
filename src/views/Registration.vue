@@ -130,6 +130,10 @@ export default {
 #modal-div {
   .row {
     margin-bottom: 0;
+    padding: 0 24px;
+    @media (max-width: 550px) {
+      padding: 0;
+    }
   }
   position: relative;
   width: 500px;
@@ -137,9 +141,14 @@ export default {
   border-radius: 5px;
   height: max-content;
   margin: 9% auto;
+  @media (max-width: 550px) {
+    width: 90%;
+    margin: 30px auto;
+  }
   p {
     color: rgb(0, 0, 0);
     font-size: 20px;
+    text-align: center;
     cursor: default;
   }
   a {

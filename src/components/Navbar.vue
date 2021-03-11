@@ -41,20 +41,22 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-  border-bottom: 2px solid black;
   &__row {
     display: flex;
     justify-content: space-between;
-    height: 60px;
+    min-height: 10vh;
     background-color: blue;
     width: 100%;
   }
   &__row-logo {
     display: flex;
     align-items: center;
+    margin: 5px;
     img {
+      transition: all 0.3s linear;
       width: 48px;
       &:hover {
+        transform: scale(1.1);
         cursor: pointer;
       }
       @media (max-width: 350px) {
@@ -64,9 +66,9 @@ export default {
   }
   &__row-items {
     display: flex;
-    height: 50px;
     font-size: 22px;
     align-self: center;
+    margin: 0 10px 0 0;
     @media (max-width: 650px) {
       font-size: 16px;
     }
@@ -77,19 +79,24 @@ export default {
   &__row-item {
     display: flex;
     align-items: center;
-    margin-right: 20px;
-    padding: 0 5px;
+    margin: 5px 20px;
+    padding: 10px 10px;
     color: white;
-    transition-duration: 0.5s;
-    border: 1px solid blue;
-    border-radius: 3px;
+    transition: all 0.3s linear;
+    border-radius: 50%;
     &:hover {
       cursor: pointer;
-      background-color: rgb(5, 5, 168);
-      border: 1px solid black;
+      border: 1px black;
+      transform: scale(1.1);
+      color: black;
+      text-shadow: 1px 1px 2px black, 0 0 1em blue;
+    }
+    @media (max-width: 850px) {
+      margin: 5px 0;
     }
     @media (max-width: 450px) {
       margin-right: 0;
+      padding: 0 2px;
     }
   }
 }

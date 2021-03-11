@@ -37,63 +37,63 @@ export default {
     Accordion,
   },
   created() {
-    // this.recognizer = new webkitSpeechRecognition()
-    // this.recognizer.interimResults = true
-    // this.recognizer.lang = 'ru-Ru'
-    // this.recognizer.onresult = function(event) {
-    //   this.result = event.results[event.resultIndex]
-    //   this.arr = this.result[0].transcript.split(' ')
-    //   this.lastIndex = this.arr[this.arr.length - 1]
-    //   window.location = `https://${this.lastIndex}/`
-    //   this.arr = null
-    //   this.lastIndex = null
-    //   this.result = null
-    // }
+    this.recognizer = new webkitSpeechRecognition()
+    this.recognizer.interimResults = true
+    this.recognizer.lang = 'ru-Ru'
+    this.recognizer.onresult = function(event) {
+      this.result = event.results[event.resultIndex]
+      this.arr = this.result[0].transcript.split(' ')
+      this.lastIndex = this.arr[this.arr.length - 1]
+      window.location = `https://${this.lastIndex}/`
+      this.arr = null
+      this.lastIndex = null
+      this.result = null
+    }
   },
   methods: {
-    // speech() {
-    //   this.recognizer.start()
-    // },
-    // talk() {
-    //   recognizer.start()
-    //   this.recognizer.onresult = function(event) {
-    //     this.result = event.results[event.resultIndex]
-    //     if (this.result.isFinal && this.result[0].transcript == 'Луна Привет') {
-    //       this.synth = window.speechSynthesis
-    //       this.utterance = new SpeechSynthesisUtterance('Привет, иксашэйтвэлв')
-    //       this.synth.speak(this.utterance)
-    //     } else {
-    //       console.log('Промежуточный результат: ', this.result[0].transcript)
-    //     }
-    //     if (
-    //       this.result.isFinal &&
-    //       this.result[0].transcript == 'Как дела луна'
-    //     ) {
-    //       this.synth = window.speechSynthesis
-    //       this.utterance = new SpeechSynthesisUtterance(
-    //         'Всё супер, спасибо, как твои дела, юшка'
-    //       )
-    //       this.synth.speak(this.utterance)
-    //     } else {
-    //       console.log('Промежуточный результат: ', this.result[0].transcript)
-    //     }
-    //     if (
-    //       this.result.isFinal &&
-    //       this.result[0].transcript == 'Чем занимаешься луна'
-    //     ) {
-    //       this.synth = window.speechSynthesis
-    //       this.utterance = new SpeechSynthesisUtterance(
-    //         'Преисполняюсь в собственном сознании и иду любоваться прекрасным блять осенним закатом'
-    //       )
-    //       this.synth.speak(this.utterance)
-    //     } else {
-    //       console.log('Промежуточный результат: ', this.result[0].transcript)
-    //     }
-    //   }
-    // },
-    // stop() {
-    //   this.synth.pause()
-    // },
+    speech() {
+      this.recognizer.start()
+    },
+    talk() {
+      recognizer.start()
+      this.recognizer.onresult = function(event) {
+        this.result = event.results[event.resultIndex]
+        if (this.result.isFinal && this.result[0].transcript == 'Луна Привет') {
+          this.synth = window.speechSynthesis
+          this.utterance = new SpeechSynthesisUtterance('Привет, джиэликсмайнд')
+          this.synth.speak(this.utterance)
+        } else {
+          console.log('Промежуточный результат: ', this.result[0].transcript)
+        }
+        if (
+          this.result.isFinal &&
+          this.result[0].transcript == 'Как дела луна'
+        ) {
+          this.synth = window.speechSynthesis
+          this.utterance = new SpeechSynthesisUtterance(
+            'Всё супер, спасибо, как твои дела'
+          )
+          this.synth.speak(this.utterance)
+        } else {
+          console.log('Промежуточный результат: ', this.result[0].transcript)
+        }
+        if (
+          this.result.isFinal &&
+          this.result[0].transcript == 'Чем занимаешься луна'
+        ) {
+          this.synth = window.speechSynthesis
+          this.utterance = new SpeechSynthesisUtterance(
+            'Преисполняюсь в собственном сознании и иду любоваться прекрасным блять осенним закатом'
+          )
+          this.synth.speak(this.utterance)
+        } else {
+          console.log('Промежуточный результат: ', this.result[0].transcript)
+        }
+      }
+    },
+    stop() {
+      this.synth.pause()
+    },
   },
 }
 </script>

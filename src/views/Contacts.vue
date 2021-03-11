@@ -42,7 +42,7 @@ export default {}
   &__text {
     font-size: 28px;
     width: 80%;
-    padding: 15% 0;
+    padding: 10% 0;
     margin: 0 auto;
     color: white;
     text-shadow: 2px 2px 3px black, 1em 1em 1em black;
@@ -53,15 +53,21 @@ export default {}
   &__links {
     display: flex;
     justify-content: space-evenly;
-    padding-bottom: 20%;
     @media (max-width: 450px) {
       padding-bottom: 40%;
     }
   }
+  &__link-item {
+    perspective: 400px;
+  }
   &__link-img {
     width: 72px;
+    transition-duration: 0.3s;
     @media (max-width: 450px) {
       width: 48px;
+    }
+    &:hover {
+      transform: scale(1.2);
     }
   }
 }

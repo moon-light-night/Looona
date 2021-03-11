@@ -1,6 +1,9 @@
+@import '~normalize.css/normalize.css';
+
 body {
-  background: url(./56r0egyn.bmp) 50% no-repeat;
-  -webkit-background-size: cover;
+  background-image: url(./56r0egyn.bmp);
+  background-repeat: no-repeat;
   background-size: cover;
-  -moz-background-size: cover;
+  background-position: center, center;
+  background-attachment: fixed;
 }

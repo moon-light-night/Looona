@@ -108,10 +108,19 @@ export default {
   }
   position: relative;
   width: 500px;
-  background-color: white;
+  background-color: rgb(87, 79, 79);
   border-radius: 5px;
   height: max-content;
   margin: 9% auto;
+  @media (max-width: 550px) {
+    width: 90%;
+    margin: 30px auto;
+  }
+  .card-content {
+    @media (max-width: 550px) {
+      padding: 0;
+    }
+  }
   p {
     color: rgb(0, 0, 0);
     font-size: 20px;

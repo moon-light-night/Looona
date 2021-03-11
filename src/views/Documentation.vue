@@ -2,7 +2,7 @@
   <div class="docs">
     <div class="docs__sidebar">
       <div class="docs__sidebar-item" id="redirect" @click="getId">
-        Redirect to website
+        Redirect
       </div>
       <div class="docs__sidebar-item" id="pronounce" @click="getId">
         Pronunciation
@@ -72,9 +72,10 @@ export default {
 .docs {
   display: flex;
   color: rgb(255, 255, 255);
+  height: 100%;
   &__sidebar {
     width: 200px;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     background: linear-gradient(135deg, blue, rgb(83, 240, 167) 100%);
@@ -91,7 +92,9 @@ export default {
     transition-duration: 0.6s;
     &:hover {
       cursor: pointer;
-      background-color: rgb(5, 5, 168);
+      text-shadow: 1px 1px 2px black, 0 0 1em blue;
+      transform: scale(1.1);
+      color: black;
     }
     @media (max-width: 650px) {
       font-size: 14px;
